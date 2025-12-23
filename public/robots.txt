@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://monobadi-restaurant.vercel.app/sitemap.xml
