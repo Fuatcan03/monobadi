@@ -37,7 +37,7 @@
     "coldMeze": [
       { "name": "COLD APPETIZER SET (12 VARIETIES)", "price": "500", "desc": "A selection of 12 different fresh appetizers prepared with traditional recipes.", "note": "Per Person", "image": "/salataa.jpg" },
       { "name": "HUMMUS", "price": "100", "desc": "Silky smooth blend of golden tahini and carefully boiled chickpeas.", "image": "/humus.jpg" },
-      { "name": "YOGURT", "price": "100", "desc": "Full-fat, village-style strained yogurt from our local region.", "image": "/logo.png" },
+      { "name": "YOGURT", "price": "100", "desc": "Full-fat, village-style strained yogurt from our local region.", "image": "/yogurt.jpeg" },
       { "name": "TZATZIKI", "price": "100", "desc": "A refreshing harmony of fresh cucumbers, garlic, and mint.", "image": "/cacık.jpg" },
       { "name": "TAHINI", "price": "100", "desc": "Authentic Cyprus-style tahini flavored with plenty of lemon and garlic.", "image": "/tahin.jpg" },
       { "name": "HAYDARI", "price": "100", "desc": "A thick, flavorful yogurt dip blended with fresh dill and special spices.", "image": "/trator.jpg" },
@@ -49,10 +49,10 @@
       { "name": "BEETROOT", "price": "100", "desc": "Appetizing fresh beetroot slices marinated in a special vinegar sauce.", "image": "/pancar-salatası.jpg" },
       { "name": "PINK SULTAN", "price": "100", "desc": "A special appetizer of beetroot and yogurt, enchanting in both color and taste.", "image": "/pancar-salatası.jpg" },
       { "name": "TUNA WITH CORN", "price": "100", "desc": "Ocean-breeze tuna perfectly combined with sweet corn kernels.", "image": "/ton-balıklı-mısırlı-salata.jpg" },
-      { "name": "ROASTED PEPPERS", "price": "100", "desc": "Capia peppers roasted over wood fire with olive oil and garlic.", "image": "/logo.png" },
-      { "name": "ROASTED EGGPLANT", "price": "100", "desc": "Smooth roasted eggplant dip carrying the smoky aroma of the fire.", "image": "/logo.png" },
-      { "name": "CRAB SALAD", "price": "100", "desc": "Fresh crab meat with a special sauce for seafood enthusiasts.", "image": "/logo.png" },
-      { "name": "CHAKISDEZ", "price": "100", "desc": "A Cypriot table essential; crushed green olives with thyme and garlic.", "image": "/logo.png" }
+      { "name": "ROASTED PEPPERS", "price": "100", "desc": "Capia peppers roasted over wood fire with olive oil and garlic.", "image": "//kozlenmisbiber.jpeg" },
+      { "name": "ROASTED EGGPLANT", "price": "100", "desc": "Smooth roasted eggplant dip carrying the smoky aroma of the fire.", "image": "/kozlenmispatlıcan.jpeg" },
+      { "name": "CRAB SALAD", "price": "100", "desc": "Fresh crab meat with a special sauce for seafood enthusiasts.", "image": "/yengecsalatası.jpeg" },
+      { "name": "CHAKISDEZ", "price": "100", "desc": "A Cypriot table essential; crushed green olives with thyme and garlic.", "image": "/cakısdez.jpeg" }
     ],
     "hotMeze": [
       { "name": "HOT APPETIZER SET", "price": "500", "desc": "A rich combination of our most popular hot starters served warm.", "note": "Per Person", "image": "/avcı-boregi.jpg" },
@@ -68,7 +68,7 @@
       { "name": "POTATO CHIPS", "price": "350", "desc": "Thinly sliced, golden-brown homemade crispy fries.", "image": "/patates-cipsi.jpg" }
     ],
     "grills": [
-      { "name": "BEYTI WITH YOGURT", "price": "650", "desc": "Kebab wrapped in special sauce lavaş, served with fresh yogurt and hot butter.", "image": "/adana-kebabı.jpg" },
+      { "name": "BEYTI WITH YOGURT", "price": "650", "desc": "Kebab wrapped in special sauce lavaş, served with fresh yogurt and hot butter.", "image": "/yogurtlubeyti.jpeg" },
       { "name": "BEEF SHISH", "price": "600", "desc": "Selected beef cuts grilled to a soft, melt-in-the-mouth texture.", "image": "/et-şiş.jpg" },
       { "name": "CHICKEN SHISH", "price": "600", "desc": "Marinated chicken breast cubes grilled to a golden brown over charcoal.", "image": "/tavuk-şiş.jpg" },
       { "name": "CHICKEN WINGS", "price": "600", "desc": "Crispy skin and juicy meat, the most enjoyable form of the grill.", "image": "/tavuk-kanat.jpg" },
@@ -84,26 +84,26 @@
     "fish": [
       { "name": "FRIED CALAMARI", "price": "600", "desc": "Golden breaded crispy calamari served with special tartar sauce.", "image": "/kalamar-tava.jpg" },
       { "name": "CALAMARI IN FOIL", "price": "650", "desc": "Soft calamari steamed in foil with butter and fresh herbs.", "image": "/kalamar-folyo.jpg" },
-      { "name": "CALAMARI WITH HALLOUMI", "price": "700", "desc": "Special grilled calamari stuffed with halloumi cheese.", "image": "/kalamar-folyo.jpg" },
+      { "name": "CALAMARI WITH HALLOUMI", "price": "700", "desc": "Special grilled calamari stuffed with halloumi cheese.", "image": "/hellimlikalamar.jpeg" },
       { "name": "FRIED CUTTLEFISH", "price": "650", "desc": "The most crispy and delicious fried form of fresh cuttlefish.", "image": "/sipya.jpg" },
-      { "name": "FRIED OCTOPUS", "price": "700", "desc": "Specially marinated octopus arms, crispy outside and juicy inside.", "image": "/ahtapot-güveç.jpg" },
+      { "name": "FRIED OCTOPUS", "price": "700", "desc": "Specially marinated octopus arms, crispy outside and juicy inside.", "image": "/ahtabottava.jpeg" },
       { "name": "OCTOPUS CASSEROLE", "price": "700", "desc": "Octopus slow-cooked in a clay pot with vegetables and special sauce.", "image": "/ahtapot-güveç.jpg" },
       { "name": "FRIED MUSSELS", "price": "550", "desc": "Delicious crispy breaded mussels served with dipping sauce.", "image": "/midye-tava.jpg" },
       { "name": "FISH & CHIPS", "price": "700", "desc": "Classic British style breaded fish with crispy fries and sauce.", "image": "/fish-and-chips.jpg" },
       { "name": "SHRIMP CASSEROLE", "price": "700", "desc": "Shrimp served with plenty of butter, garlic, and melted cheddar cheese.", "image": "/karides-guvec.jpg" },
       { "name": "FRIED SHRIMP", "price": "650", "desc": "Fresh shrimps with a light and crispy coating.", "image": "/karides-guvec.jpg" },
-      { "name": "SHRIMP WITH MUSHROOMS", "price": "700", "desc": "Perfect harmony of mushrooms and fresh shrimps in a creamy sauce.", "image": "/karides-guvec.jpg" },
-      { "name": "GROUPER (ORFO)", "price": "900", "desc": "The noble fish of the Mediterranean; fresh grouper fillet seared on the grill.", "image": "/balık-tabagı-buyuk.jpg" },
-      { "name": "SEA BASS", "price": "700", "desc": "The prince of the seas; fresh white meat of sea bass grilled over fire.", "image": "/balık-tabagı-kucuk.jpg" },
-      { "name": "SEA BASS IN FOIL", "price": "750", "desc": "Sea bass locked in flavor, cooked in its own juice with vegetables.", "image": "/balık-tabagı-buyuk.jpg" },
+      { "name": "SHRIMP WITH MUSHROOMS", "price": "700", "desc": "Perfect harmony of mushrooms and fresh shrimps in a creamy sauce.", "image": "/mantarlıkarides.jpeg" },
+      { "name": "GROUPER (ORFO)", "price": "900", "desc": "The noble fish of the Mediterranean; fresh grouper fillet seared on the grill.", "image": "/orfo.jpeg" },
+      { "name": "SEA BASS", "price": "700", "desc": "The prince of the seas; fresh white meat of sea bass grilled over fire.", "image": "/levrek.jpeg" },
+      { "name": "SEA BASS IN FOIL", "price": "750", "desc": "Sea bass locked in flavor, cooked in its own juice with vegetables.", "image": "/folyadalevrek.jpeg" },
       { "name": "SEA BREAM", "price": "700", "desc": "The indispensable taste of fresh sea bream from the grill.", "image": "/çipura.jpg" },
       { "name": "SPECIAL SEA BREAM", "price": "750", "desc": "Gourmet sea bream prepared with our chef's secret recipe and special sauce.", "image": "/çipura.jpg" },
       { "name": "VOPPA", "price": "600", "desc": "The taste of local sea fish, served in its freshest seasonal form.", "image": "/voppa.jpg" },
-      { "name": "MINERI", "price": "750", "desc": "The special Mineri of the Mediterranean, known for its firm and tasty meat.", "image": "/balık-tabagı-buyuk.jpg" },
-      { "name": "SOKAN", "price": "600", "desc": "The local Sokan fish, enjoyed crispy fried in hot oil.", "image": "/balık-tabagı-kucuk.jpg" },
+      { "name": "MINERI", "price": "750", "desc": "The special Mineri of the Mediterranean, known for its firm and tasty meat.", "image": "/mineri.jpeg" },
+      { "name": "SOKAN", "price": "600", "desc": "The local Sokan fish, enjoyed crispy fried in hot oil.", "image": "/sokan.jpeg" },
       { "name": "SALMON", "price": "700", "desc": "Omega-3 rich salmon fillet, seared outside and juicy inside.", "image": "/somon.jpg" },
-      { "name": "RED MULLET (MERCAN)", "price": "600", "desc": "Fresh Red Mullet from the sea to your plate with its delicate meat.", "image": "/balık-tabagı-kucuk.jpg" },
-      { "name": "STRIPED MULLET (BARBUN)", "price": "650", "desc": "The golden-fried taste of fresh rock mullets.", "image": "/balık-tabagı-buyuk.jpg" }
+      { "name": "RED MULLET (MERCAN)", "price": "600", "desc": "Fresh Red Mullet from the sea to your plate with its delicate meat.", "image": "/mercan.jpeg" },
+      { "name": "STRIPED MULLET (BARBUN)", "price": "650", "desc": "The golden-fried taste of fresh rock mullets.", "image": "/barbun.jpeg" }
     ],
     "combos": [
       { "name": "MIXED MEAT PLATTER (FOR 4)", "price": "2800", "desc": "Giant portion for four; a family-sized feast of all our grill varieties.", "image": "/full-karısık-et.jpg" },
@@ -112,18 +112,18 @@
       { "name": "MIXED FISH PLATTER (FOR 4)", "price": "2900", "desc": "A seafood festival for crowded tables; fresh fish and hot starters together.", "image": "/balık-tabagı-buyuk.jpg" }
     ],
     "fixMenus": [
-      { "name": "FIX MEAT APPETIZERS", "price": "900", "desc": "A full start with 12 types of cold mezes and all our signature hot mezes.", "image": "/avcı-boregi.jpg" },
-      { "name": "FIX FISH APPETIZERS", "price": "1100", "desc": "12 cold mezes from the sea and seafood-heavy gourmet hot starters.", "image": "/karışık-balık-2gişi.jpg" },
-      { "name": "FIX MEAT MENU", "price": "1100", "desc": "Fix meat appetizer content plus a mixed grill feast as the main course.", "image": "/full-karısık-et.jpg" },
-      { "name": "FIX FISH MENU", "price": "1400", "desc": "Fix fish appetizer content plus premium sea fish as the main course.", "image": "/balık-tabagı-buyuk.jpg" }
+      { "name": "FIX MEAT APPETIZERS", "price": "900", "desc": "A full start with 12 types of cold mezes and all our signature hot mezes.", "image": "/fix-menu.jpeg" },
+      { "name": "FIX FISH APPETIZERS", "price": "1100", "desc": "12 cold mezes from the sea and seafood-heavy gourmet hot starters.", "image": "/fix-menu.jpeg" },
+      { "name": "FIX MEAT MENU", "price": "1100", "desc": "Fix meat appetizer content plus a mixed grill feast as the main course.", "image": "/fix-menu.jpeg" },
+      { "name": "FIX FISH MENU", "price": "1400", "desc": "Fix fish appetizer content plus premium sea fish as the main course.", "image": "/fix-menu.jpeg" }
     ],
     "beverages": [
       { "name": "COCA COLA", "price": "80", "desc": "Classic refreshing cola served ice cold.", "image": "/coca-cola.jpg" },
       { "name": "FANTA", "price": "80", "desc": "Orange flavored sparkling soft drink.", "image": "/fanta.jpg" },
       { "name": "SPRITE", "price": "80", "desc": "Lemon-lime flavored clear carbonated soft drink.", "image": "/sprite.jpg" },
       { "name": "ICE TEA", "price": "80", "desc": "Refreshing iced tea with lemon flavor.", "image": "/fuse-tea.jpg" },
-      { "name": "FRUIT JUICE", "price": "80", "desc": "Freshly squeezed seasonal fruit juice.", "image": "/logo.png" },
-      { "name": "AYRAN", "price": "80", "desc": "Traditional Turkish yogurt drink, salted and chilled.", "image": "/logo.png" },
+      { "name": "FRUIT JUICE", "price": "80", "desc": "Freshly squeezed seasonal fruit juice.", "image": "/meyvesuyu.jpeg" },
+      { "name": "AYRAN", "price": "80", "desc": "Traditional Turkish yogurt drink, salted and chilled.", "image": "/ayran.jpeg" },
       { "name": "ŞALGAM", "price": "80", "desc": "Traditional fermented turnip juice, a perfect accompaniment to raki.", "image": "/şalgam.jpg" },
       { "name": "FRUIT SODA", "price": "60", "desc": "Sparkling soda with natural fruit flavor.", "image": "/sade-soda.jpg" },
       { "name": "PLAIN SODA", "price": "60", "desc": "Sparkling soda water, perfect as a mixer.", "image": "/sade-soda.jpg" },
@@ -131,9 +131,9 @@
       { "name": "SMALL WATER (0.5L)", "price": "20", "desc": "Small bottle of natural spring water.", "image": "/su.jpg" }
     ],
     "alcohol": [
-      { "name": "CARLSBERG", "price": "120", "desc": "Danish pilsner beer, crisp and refreshing.", "image": "/logo.png" },
-      { "name": "TUBORG", "price": "120", "desc": "Danish premium lager beer.", "image": "/logo.png" },
-      { "name": "PASQUA WINE (75CL)", "price": "800", "desc": "Italian red wine, full-bodied and rich.", "image": "/logo.png" },
+      { "name": "CARLSBERG", "price": "120", "desc": "Danish pilsner beer, crisp and refreshing.", "image": "/calsber.jpeg" },
+      { "name": "TUBORG", "price": "120", "desc": "Danish premium lager beer.", "image": "/tuborg.jpeg" },
+      { "name": "PASQUA WINE (75CL)", "price": "800", "desc": "Italian red wine, full-bodied and rich.", "image": "/PASQUA ŞARAP.jpeg" },
       { "name": "YENI RAKI (70CL)", "price": "1000", "desc": "Traditional Turkish anise-flavored alcoholic drink.", "image": "/yeni-rakı.jpg" },
       { "name": "TEKIRDAG GOLD (70CL)", "price": "1400", "desc": "Premium quality Turkish raki, aged to perfection.", "image": "/tekidağ-gold.jpg" },
       { "name": "RED LABEL (75CL)", "price": "1200", "desc": "Johnnie Walker Red Label blended Scotch whisky.", "image": "/red-label.jpg" },
