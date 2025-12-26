@@ -29,7 +29,7 @@ export function Footer({ language }: FooterProps) {
   const t = translations[language]
 
   return (
-    <footer className="bg-muted/50 border-t border-primary/10">
+    <footer className="bg-muted/50 border-t border-primary/10 ">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
@@ -101,7 +101,7 @@ export function Footer({ language }: FooterProps) {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-primary/10 text-center">
+        <div className="mt-5 pt-8 border-t border-primary/10 text-center">
           <p className="text-sm text-muted-foreground">{t.copyright}</p>
         </div>
       </div>

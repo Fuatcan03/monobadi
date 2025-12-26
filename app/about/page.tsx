@@ -13,8 +13,15 @@ export default function AboutPage() {
   const [language, setLanguage] = useState<"tr" | "en">("tr")
 
   useEffect(() => {
+    const savedLang = localStorage.getItem("lang") as "tr" | "en" | null
+    if (savedLang) setLanguage(savedLang)
+    
     window.scrollTo(0, 0)
   }, [])
+
+  useEffect(() => {
+    localStorage.setItem("lang", language)
+  }, [language])
 
   const translations = {
     tr: {
@@ -45,19 +52,18 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/30">
-      {/* Navigation */}
       <Navigation 
-  language={language}
-  onLanguageChange={setLanguage}
-/>
+        language={language}
+        onLanguageChange={setLanguage}
+      />
 
-      {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center text-center p-4">
         <div className="absolute inset-0 z-0">
           <img 
             src="/logo.png" 
             className="w-full h-full object-cover opacity-10"
-            alt="Background"
+            alt="Monobadi Tepe Restaurant"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
@@ -75,9 +81,7 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
-        {/* Story */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,7 +105,6 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* Values */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,14 +129,22 @@ export default function AboutPage() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
                   {value.icon}
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-center">{value.title}</h3>
-                <p className="text-muted-foreground text-center text-sm">{value.desc}</p>
+                <h3 className="font-bold text-lg mb-2 text-center">{language === "tr" ? value.title : 
+                  value.title === "Müşteri Memnuniyeti" ? "Customer Satisfaction" :
+                  value.title === "Kalite" ? "Quality" :
+                  value.title === "Sevgi" ? "Love" : "Traditional"}</h3>
+                <p className="text-muted-foreground text-center text-sm">
+                  {language === "tr" ? value.desc : 
+                  value.desc.includes("misafirlerimizin") ? "Our guests' satisfaction is our top priority." :
+                  value.desc.includes("taze malzemeler") ? "We serve the most delicious meals with the freshest ingredients." :
+                  value.desc.includes("sevgiyle") ? "We do everything we do with love." : 
+                  "We preserve our traditional recipes while adding modern touches."}
+                </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Team Section (Optional - can add later) */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -143,13 +154,10 @@ export default function AboutPage() {
         </motion.div>
       </main>
 
-      {/* Contact Section */}
       <ContactSection language={language} />
 
-      {/* Footer */}
       <Footer language={language} />
 
-      {/* Floating Buttons */}
       <FloatingButtons />
     </div>
   )

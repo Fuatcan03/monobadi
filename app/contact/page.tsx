@@ -18,17 +18,37 @@ export default function ContactPage() {
     date: "",
     guests: "2",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
+    const savedLang = localStorage.getItem("lang") as "tr" | "en" | null
+    if (savedLang) setLanguage(savedLang)
+    
     window.scrollTo(0, 0)
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    localStorage.setItem("lang", language)
+  }, [language])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic here
-    console.log("Form submitted:", formData)
-    alert(language === "tr" ? "Mesajınız gönderildi!" : "Your message has been sent!")
-    setFormData({ name: "", email: "", phone: "", message: "", date: "", guests: "2" })
+    setIsSubmitting(true)
+    
+    try {
+      console.log("Form submitted:", formData)
+      
+      const whatsappMessage = `Yeni Rezervasyon İsteği:%0A%0Aİsim: ${formData.name}%0ATelefon: ${formData.phone}%0ATarih: ${formData.date}%0AMisafir Sayısı: ${formData.guests}%0AMesaj: ${formData.message}`
+      window.open(`https://wa.me/905338809516?text=${whatsappMessage}`, '_blank')
+      
+      alert(language === "tr" ? "Rezervasyon isteğiniz alındı! Size dönüş yapacağız." : "Your reservation request has been received! We will get back to you.")
+      setFormData({ name: "", email: "", phone: "", message: "", date: "", guests: "2" })
+    } catch (error) {
+      console.error("Form submission error:", error)
+      alert(language === "tr" ? "Bir hata oluştu. Lütfen tekrar deneyin." : "An error occurred. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const translations = {
@@ -42,12 +62,12 @@ export default function ContactPage() {
       date: "Tarih",
       guests: "Misafir Sayısı",
       message: "Mesajınız",
-      submit: "Gönder",
+      submit: "Rezervasyon Yap",
       contactInfo: "İletişim Bilgileri",
       hours: "Çalışma Saatleri",
       address: "Adres",
       follow: "Bizi Takip Edin",
-      successMessage: "Mesajınız başarıyla gönderildi!",
+      successMessage: "Rezervasyon isteğiniz alındı!",
       required: "Bu alan zorunludur",
       invalidEmail: "Geçerli bir e-posta adresi giriniz",
     },
@@ -61,12 +81,12 @@ export default function ContactPage() {
       date: "Date",
       guests: "Number of Guests",
       message: "Your Message",
-      submit: "Send",
+      submit: "Make Reservation",
       contactInfo: "Contact Information",
       hours: "Opening Hours",
       address: "Address",
       follow: "Follow Us",
-      successMessage: "Your message has been sent successfully!",
+      successMessage: "Your reservation request has been received!",
       required: "This field is required",
       invalidEmail: "Please enter a valid email address",
     },
@@ -76,19 +96,18 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/30">
-      {/* Navigation */}
       <Navigation 
-  language={language}
-  onLanguageChange={setLanguage}
-/>
+        language={language}
+        onLanguageChange={setLanguage}
+      />
 
-      {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] flex items-center justify-center text-center p-4">
         <div className="absolute inset-0 z-0">
           <img 
             src="/fish-and-chips.jpg" 
             className="w-full h-full object-cover opacity-10"
-            alt="Contact Background"
+            alt="Monobadi Restaurant Contact"
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
@@ -106,10 +125,8 @@ export default function ContactPage() {
         </motion.div>
       </section>
 
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -118,13 +135,14 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold mb-8">{t.reservationTitle}</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium mb-2">{t.name}</label>
+                <label className="block text-sm font-medium mb-2">{t.name} *</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full px-4 py-3 rounded-lg border border-primary/20 bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                   required
+                  placeholder={language === "tr" ? "Adınız ve soyadınız" : "Your full name"}
                 />
               </div>
 
@@ -136,24 +154,25 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full px-4 py-3 rounded-lg border border-primary/20 bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    required
+                    placeholder={language === "tr" ? "ornek@email.com" : "example@email.com"}
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">{t.phone}</label>
+                  <label className="block text-sm font-medium mb-2">{t.phone} *</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-4 py-3 rounded-lg border border-primary/20 bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     required
+                    placeholder="+90 533 000 0000"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2">{t.date}</label>
+                  <label className="block text-sm font-medium mb-2">{t.date} *</label>
                   <input
                     type="date"
                     value={formData.date}
@@ -163,13 +182,13 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">{t.guests}</label>
+                  <label className="block text-sm font-medium mb-2">{t.guests} *</label>
                   <select
                     value={formData.guests}
                     onChange={(e) => setFormData({...formData, guests: e.target.value})}
                     className="w-full px-4 py-3 rounded-lg border border-primary/20 bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                   >
-                    {[1,2,3,4,5,6,7,8,9,10].map(num => (
+                    {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map(num => (
                       <option key={num} value={num}>{num} {language === "tr" ? "Kişi" : "People"}</option>
                     ))}
                   </select>
@@ -183,20 +202,26 @@ export default function ContactPage() {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-primary/20 bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-                  required
+                  placeholder={language === "tr" ? "Özel istekleriniz veya notlarınız..." : "Your special requests or notes..."}
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 px-6 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                disabled={isSubmitting}
+                className="w-full py-4 px-6 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t.submit}
+                {isSubmitting ? (language === "tr" ? "Gönderiliyor..." : "Sending...") : t.submit}
               </button>
+              
+              <p className="text-sm text-muted-foreground text-center">
+                {language === "tr" 
+                  ? "* ile işaretli alanlar zorunludur. Rezervasyonunuz onaylandıktan sonra size dönüş yapılacaktır." 
+                  : "* Required fields. We will get back to you after your reservation is confirmed."}
+              </p>
             </form>
           </motion.div>
 
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -214,10 +239,13 @@ export default function ContactPage() {
                   <h3 className="font-bold text-lg mb-2">{language === "tr" ? "Telefon" : "Phone"}</h3>
                   <div className="space-y-1">
                     <a href="tel:+905338809516" className="block text-muted-foreground hover:text-primary transition-colors">
-                      +90 533 880 95 16
+                      +90 533 880 95 16 (Ana Hat)
                     </a>
                     <a href="tel:+905338641183" className="block text-muted-foreground hover:text-primary transition-colors">
                       +90 533 864 11 83
+                    </a>
+                    <a href="tel:+905338801918" className="block text-muted-foreground hover:text-primary transition-colors">
+                      +90 533 880 19 18
                     </a>
                   </div>
                 </div>
@@ -228,7 +256,7 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2">E-posta</h3>
+                  <h3 className="font-bold text-lg mb-2">{language === "tr" ? "E-posta" : "Email"}</h3>
                   <a href="mailto:info@monobadi.com" className="text-muted-foreground hover:text-primary transition-colors">
                     info@monobadi.com
                   </a>
@@ -241,7 +269,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">{t.hours}</h3>
-                  <p className="text-muted-foreground">Her gün 11:00 - 23:00</p>
+                  <p className="text-muted-foreground">11:00 - 23:00</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {language === "tr" ? "Her gün açığız" : "Open every day"}
+                  </p>
                 </div>
               </div>
 
@@ -252,6 +283,14 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-lg mb-2">{t.address}</h3>
                   <p className="text-muted-foreground">Kumyalı Köyü, Tepe Restaurant Yolu, Kıbrıs</p>
+                  <a 
+                    href="https://maps.app.goo.gl/dAYKCvpAVD9jRn1KA" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-sm text-primary hover:underline mt-2 inline-block"
+                  >
+                    {language === "tr" ? "Google Maps'te aç" : "Open in Google Maps"}
+                  </a>
                 </div>
               </div>
             </div>
@@ -259,13 +298,10 @@ export default function ContactPage() {
         </div>
       </main>
 
-      {/* Contact Section Component */}
       <ContactSection language={language} />
 
-      {/* Footer */}
       <Footer language={language} />
 
-      {/* Floating Buttons */}
       <FloatingButtons />
     </div>
   )

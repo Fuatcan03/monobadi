@@ -22,13 +22,11 @@ export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const mainContainerRef = useRef<HTMLDivElement>(null)
 
-  // 🔴 SAYFA AÇILINCA DİLİ HAFIZADAN OKU
   useEffect(() => {
     const savedLang = localStorage.getItem("lang") as "tr" | "en" | null
     if (savedLang) setLanguage(savedLang)
   }, [])
 
-  // 🔴 DİL DEĞİŞİNCE HAFIZAYA YAZ
   useEffect(() => {
     localStorage.setItem("lang", language)
   }, [language])
@@ -38,22 +36,37 @@ export default function HomePage() {
 
     if (urlParams.get("qr") === "menu") {
       router.push("/menu")
-    } else {
+      return
+    }
+
+    const hasSeenPopup = localStorage.getItem("hasSeenPopup")
+    if (!hasSeenPopup) {
       const timer = setTimeout(() => {
         setShowInitial(true)
       }, 500)
       return () => clearTimeout(timer)
     }
-
-    const handleScroll = () => {
-      if (mainContainerRef.current) {
-        setShowScrollTop(mainContainerRef.current.scrollTop > 300)
-      }
-    }
-
-    mainContainerRef.current?.addEventListener("scroll", handleScroll)
-    return () => mainContainerRef.current?.removeEventListener("scroll", handleScroll)
   }, [router])
+
+  useEffect(() => {
+    if (showInitial) {
+      localStorage.setItem("hasSeenPopup", "true")
+    }
+  }, [showInitial])
+
+  const handleScroll = () => {
+    if (mainContainerRef.current) {
+      setShowScrollTop(mainContainerRef.current.scrollTop > 300)
+    }
+  }
+
+  useEffect(() => {
+    const container = mainContainerRef.current
+    if (!container) return
+
+    container.addEventListener("scroll", handleScroll)
+    return () => container.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const scrollToTop = () => {
     mainContainerRef.current?.scrollTo({ top: 0, behavior: "smooth" })
@@ -63,11 +76,16 @@ export default function HomePage() {
     router.push("/menu")
   }
 
+  const handleLanguageChange = (lang: "tr" | "en") => {
+    setLanguage(lang)
+    localStorage.setItem("lang", lang)
+  }
+
   return (
-    <div className="h-[100dvh] flex flex-col">
+    <div className="h-[100dvh] flex flex-col bg-gradient-to-br from-primary/5 via-background to-accent/5">
       <InitialPopup
         language={language}
-        onLanguageChange={setLanguage}
+        onLanguageChange={handleLanguageChange}
         onMenuClick={handleMenuClick}
         onClose={() => setShowInitial(false)}
         isOpen={showInitial}
@@ -76,22 +94,38 @@ export default function HomePage() {
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-40 bg-primary text-white p-3 rounded-full"
+            className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-2xl transition-all duration-300"
+            aria-label="Scroll to top"
           >
-            <ArrowUp />
+            <ArrowUp className="w-5 h-5 md:w-6 md:h-6" />
           </motion.button>
         )}
       </AnimatePresence>
 
       <FloatingButtons />
 
-      <Navigation language={language} onLanguageChange={setLanguage} />
+      <Navigation
+        language={language}
+        onLanguageChange={handleLanguageChange}
+      />
 
-      <div ref={mainContainerRef} className="flex-1 overflow-y-auto">
-        <HeroSection language={language} onMenuClick={handleMenuClick} />
+      <div 
+        ref={mainContainerRef}
+        className="flex-1 overflow-y-auto scroll-smooth"
+      >
+        <HeroSection
+          language={language}
+          onMenuClick={handleMenuClick}
+        />
+
         <AboutSection language={language} />
+
         <ContactSection language={language} />
+
         <Footer language={language} />
       </div>
     </div>
