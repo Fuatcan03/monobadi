@@ -19,6 +19,7 @@ export function InitialPopup({
   onClose,
   isOpen 
 }: InitialPopupProps) {
+
   const translations = {
     tr: {
       initialTitle: "Hoş Geldiniz",
@@ -36,13 +37,20 @@ export function InitialPopup({
 
   const t = translations[language]
 
+  // 🔴 KRİTİK NOKTA
+  const handleMenuClick = () => {
+    localStorage.setItem("lang", language) // ⬅️ DİLİ ZORLA YAZ
+    onMenuClick()
+    onClose()
+  }
+
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.3 } }}
+          exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 bg-gradient-to-br from-primary/20 via-background to-accent/20 backdrop-blur-md flex items-center justify-center p-4"
         >
           <motion.div
@@ -53,93 +61,52 @@ export function InitialPopup({
           >
             {/* Language Selector */}
             <div className="flex justify-center gap-2">
-              <Button 
-                variant={language === "tr" ? "default" : "outline"} 
-                size="sm" 
-                onClick={() => onLanguageChange("tr")}
-                className="min-w-[100px]"
+              <Button
+                variant={language === "tr" ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  localStorage.setItem("lang", "tr")
+                  onLanguageChange("tr")
+                }}
               >
                 🇹🇷 Türkçe
               </Button>
-              <Button 
-                variant={language === "en" ? "default" : "outline"} 
-                size="sm" 
-                onClick={() => onLanguageChange("en")}
-                className="min-w-[100px]"
+
+              <Button
+                variant={language === "en" ? "default" : "outline"}
+                size="sm"
+                onClick={() => {
+                  localStorage.setItem("lang", "en")
+                  onLanguageChange("en")
+                }}
               >
                 🇬🇧 English
               </Button>
             </div>
 
-            {/* Logo Animation */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-              <motion.img 
-                src="/logo.png" 
-                className="w-36 h-36 md:w-48 md:h-48 mx-auto object-contain drop-shadow-2xl relative z-10"
-                alt="Monobadi Logo"
-                initial={{ rotate: -10, scale: 0.8 }}
-                animate={{ rotate: 0, scale: 1 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              />
-            </div>
+            {/* Logo */}
+            <motion.img
+              src="/logo.png"
+              className="w-40 mx-auto"
+              alt="Monobadi Logo"
+            />
 
-            {/* Text Content */}
-            <div className="space-y-2">
-              <motion.h1 
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                {t.initialTitle}
-              </motion.h1>
-              <motion.p 
-                className="text-lg md:text-xl text-muted-foreground font-medium"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                {t.restaurantName}
-              </motion.p>
-            </div>
+            <h1 className="text-3xl font-bold">{t.initialTitle}</h1>
+            <p className="text-muted-foreground">{t.restaurantName}</p>
 
-            {/* Action Buttons */}
-            <div className="space-y-3">
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <Button 
-                  size="lg" 
-                  className="w-full text-base md:text-lg py-6 md:py-7 bg-primary group"
-                  onClick={() => { 
-                    onMenuClick(); 
-                    onClose(); 
-                  }}
-                >
-                  <MenuIcon className="w-5 h-5 md:w-6 md:h-6 mr-2 group-hover:rotate-12 transition-transform" />
-                  {t.viewMenu}
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="w-full text-base md:text-lg py-6 md:py-7 border-2 hover:bg-primary/10"
-                  onClick={onClose}
-                >
-                  {t.viewSite}
-                </Button>
-              </motion.div>
-            </div>
+            <Button
+              size="lg"
+              className="w-full"
+              onClick={handleMenuClick}
+            >
+              <MenuIcon className="mr-2" />
+              {t.viewMenu}
+              <ChevronRight className="ml-2" />
+            </Button>
+
+            <Button variant="outline" onClick={onClose} className="w-full">
+              {t.viewSite}
+            </Button>
           </motion.div>
         </motion.div>
       )}

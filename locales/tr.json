@@ -16,7 +16,13 @@
     "setNote": "Set menüler minimum 2 kişiliktir",
     "grilledNote": "Izgara çeşitlerimiz 5 çeşit soğuk meze ve salata ile servis edilir",
     "fishNote": "Balık çeşitlerimiz 5 çeşit soğuk meze ve salata ile servis edilir",
-    "perPerson": "Kişi başı"
+    "perPerson": "Kişi başı",
+    "selectCategory": "Kategori Seçin",
+    "beverageNote": "Tüm meşrubatlar soğuk servis edilir",
+    "alcoholNote": "Alkol sadece 18 yaş ve üzeri müşterilere servis edilir",
+    "totalItems": "Toplam Ürün",
+    "category": "Kategori",
+    "scrollForMore": "Daha fazlası için kaydırın"
   },
   "categories": {
     "coldMeze": "Soğuk Mezeler",
@@ -113,29 +119,29 @@
       { "name": "FİX BALIK MENÜ", "price": "1400", "desc": "Fix balık meze içeriğine ek olarak ana yemekte seçkin deniz balıkları.", "image": "/balık-tabagı-buyuk.jpg" }
     ],
     "beverages": [
-      { "name": "COCA COLA", "price": "80", "image": "/coca-cola.jpg" },
-      { "name": "FANTA", "price": "80", "image": "/fanta.jpg" },
-      { "name": "SPRITE", "price": "80", "image": "/sprite.jpg" },
-      { "name": "ICE TEA", "price": "80", "image": "/fuse-tea.jpg" },
-      { "name": "MEYVE SUYU", "price": "80", "image": "/logo.png" },
-      { "name": "AYRAN", "price": "80", "image": "/logo.png" },
-      { "name": "ŞALGAM", "price": "80", "image": "/şalgam.jpg" },
-      { "name": "MEYVELİ SODA", "price": "60", "image": "/sade-soda.jpg" },
-      { "name": "SADE SODA", "price": "60", "image": "/sade-soda.jpg" },
-      { "name": "BÜYÜK SU", "price": "50", "image": "/buyuk-su.jpg" },
-      { "name": "KÜÇÜK SU", "price": "20", "image": "/su.jpg" }
+      { "name": "COCA COLA", "price": "80", "desc": "Klasik ve ferahlatıcı kola, buz gibi servis edilir.", "image": "/coca-cola.jpg" },
+      { "name": "FANTA", "price": "80", "desc": "Portakal aromalı gazlı meşrubat.", "image": "/fanta.jpg" },
+      { "name": "SPRITE", "price": "80", "desc": "Limon-lime aromalı şeffaf gazlı meşrubat.", "image": "/sprite.jpg" },
+      { "name": "ICE TEA", "price": "80", "desc": "Limon aromalı ferahlatıcı buzlu çay.", "image": "/fuse-tea.jpg" },
+      { "name": "MEYVE SUYU", "price": "80", "desc": "Taze sıkılmış mevsim meyvesi suyu.", "image": "/logo.png" },
+      { "name": "AYRAN", "price": "80", "desc": "Geleneksel Türk yoğurt içeceği, tuzlu ve soğuk servis edilir.", "image": "/logo.png" },
+      { "name": "ŞALGAM", "price": "80", "desc": "Geleneksel fermente şalgam suyu, rakının mükemmel eşlikçisi.", "image": "/şalgam.jpg" },
+      { "name": "MEYVELİ SODA", "price": "60", "desc": "Doğal meyve aromalı gazlı soda.", "image": "/sade-soda.jpg" },
+      { "name": "SADE SODA", "price": "60", "desc": "Gazlı soda suyu, mükemmel bir karıştırıcı.", "image": "/sade-soda.jpg" },
+      { "name": "BÜYÜK SU (1.5L)", "price": "50", "desc": "Büyük boy doğal kaynak suyu.", "image": "/buyuk-su.jpg" },
+      { "name": "KÜÇÜK SU (0.5L)", "price": "20", "desc": "Küçük boy doğal kaynak suyu.", "image": "/su.jpg" }
     ],
     "alcohol": [
-      { "name": "CARLSBERG", "price": "120", "image": "/logo.png" },
-      { "name": "TUBORG", "price": "120", "image": "/logo.png" },
-      { "name": "PASQUA ŞARAP (75CL)", "price": "800", "image": "/logo.png" },
-      { "name": "YENİ RAKI (70CL)", "price": "1000", "image": "/yeni-rakı.jpg" },
-      { "name": "TEKİRDAĞ GOLD (70CL)", "price": "1400", "image": "/tekidağ-gold.jpg" },
-      { "name": "RED LABEL (75CL)", "price": "1200", "image": "/red-label.jpg" },
-      { "name": "BLACK LABEL (75CL)", "price": "1800", "image": "/black-label.jpg" },
-      { "name": "JAMESON (70CL)", "price": "1500", "image": "/jameson.jpg" },
-      { "name": "SARI ZEYBEK (70CL)", "price": "1500", "image": "/sarı-zeybek.jpg" },
-      { "name": "BEYLERBEYİ GÖBEK (70CL)", "price": "1500", "image": "/beyler-beyi-göbek.jpg" }
+      { "name": "CARLSBERG", "price": "120", "desc": "Danimarka pilsner birası, ferah ve lezzetli.", "image": "/logo.png" },
+      { "name": "TUBORG", "price": "120", "desc": "Danimarka premium lager birası.", "image": "/logo.png" },
+      { "name": "PASQUA ŞARAP (75CL)", "price": "800", "desc": "İtalyan kırmızı şarabı, dolgun gövdeli ve zengin.", "image": "/logo.png" },
+      { "name": "YENİ RAKI (70CL)", "price": "1000", "desc": "Geleneksel Türk anasonlu içkisi.", "image": "/yeni-rakı.jpg" },
+      { "name": "TEKİRDAĞ GOLD (70CL)", "price": "1400", "desc": "Premium kalite Türk rakısı, mükemmel olgunlaştırılmış.", "image": "/tekidağ-gold.jpg" },
+      { "name": "RED LABEL (75CL)", "price": "1200", "desc": "Johnnie Walker Red Label harman İskoç viskisi.", "image": "/red-label.jpg" },
+      { "name": "BLACK LABEL (75CL)", "price": "1800", "desc": "Johnnie Walker Black Label harman İskoç viskisi.", "image": "/black-label.jpg" },
+      { "name": "JAMESON (70CL)", "price": "1500", "desc": "İrlanda viskisi, üç kez damıtılmış olağanüstü yumuşaklıkta.", "image": "/jameson.jpg" },
+      { "name": "SARI ZEYBEK (70CL)", "price": "1500", "desc": "Türk üzüm bazlı içki, otlarla harmanlanmış.", "image": "/sarı-zeybek.jpg" },
+      { "name": "BEYLERBEYİ GÖBEK (70CL)", "price": "1500", "desc": "Premium Türk rakısı, saflık için çift damıtılmış.", "image": "/beyler-beyi-göbek.jpg" }
     ]
   }
 }

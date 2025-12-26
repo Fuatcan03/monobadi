@@ -16,7 +16,12 @@
     "setNote": "Set menus are for a minimum of 2 people",
     "grilledNote": "Grilled items are served with 5 types of cold appetizers and salad",
     "fishNote": "Fish items are served with 5 types of cold appetizers and salad",
-    "perPerson": "Per Person"
+    "perPerson": "Per Person",
+    "selectCategory": "Select Category",
+    "beverageNote": "All soft drinks are served cold",
+    "alcoholNote": "Alcohol served only to customers aged 18 and over",
+    "totalItems": "Total Items",
+    "category": "Category"
   },
   "categories": {
     "coldMeze": "Cold Appetizers",
@@ -113,29 +118,29 @@
       { "name": "FIX FISH MENU", "price": "1400", "desc": "Fix fish appetizer content plus premium sea fish as the main course.", "image": "/balık-tabagı-buyuk.jpg" }
     ],
     "beverages": [
-      { "name": "COCA COLA", "price": "80", "image": "/coca-cola.jpg" },
-      { "name": "FANTA", "price": "80", "image": "/fanta.jpg" },
-      { "name": "SPRITE", "price": "80", "image": "/sprite.jpg" },
-      { "name": "ICE TEA", "price": "80", "image": "/fuse-tea.jpg" },
-      { "name": "FRUIT JUICE", "price": "80", "image": "/logo.png" },
-      { "name": "AYRAN", "price": "80", "image": "/logo.png" },
-      { "name": "TURNIP JUICE", "price": "80", "image": "/şalgam.jpg" },
-      { "name": "FRUIT SODA", "price": "60", "image": "/sade-soda.jpg" },
-      { "name": "PLAIN SODA", "price": "60", "image": "/sade-soda.jpg" },
-      { "name": "LARGE WATER", "price": "50", "image": "/buyuk-su.jpg" },
-      { "name": "SMALL WATER", "price": "20", "image": "/su.jpg" }
+      { "name": "COCA COLA", "price": "80", "desc": "Classic refreshing cola served ice cold.", "image": "/coca-cola.jpg" },
+      { "name": "FANTA", "price": "80", "desc": "Orange flavored sparkling soft drink.", "image": "/fanta.jpg" },
+      { "name": "SPRITE", "price": "80", "desc": "Lemon-lime flavored clear carbonated soft drink.", "image": "/sprite.jpg" },
+      { "name": "ICE TEA", "price": "80", "desc": "Refreshing iced tea with lemon flavor.", "image": "/fuse-tea.jpg" },
+      { "name": "FRUIT JUICE", "price": "80", "desc": "Freshly squeezed seasonal fruit juice.", "image": "/logo.png" },
+      { "name": "AYRAN", "price": "80", "desc": "Traditional Turkish yogurt drink, salted and chilled.", "image": "/logo.png" },
+      { "name": "ŞALGAM", "price": "80", "desc": "Traditional fermented turnip juice, a perfect accompaniment to raki.", "image": "/şalgam.jpg" },
+      { "name": "FRUIT SODA", "price": "60", "desc": "Sparkling soda with natural fruit flavor.", "image": "/sade-soda.jpg" },
+      { "name": "PLAIN SODA", "price": "60", "desc": "Sparkling soda water, perfect as a mixer.", "image": "/sade-soda.jpg" },
+      { "name": "LARGE WATER (1.5L)", "price": "50", "desc": "Large bottle of natural spring water.", "image": "/buyuk-su.jpg" },
+      { "name": "SMALL WATER (0.5L)", "price": "20", "desc": "Small bottle of natural spring water.", "image": "/su.jpg" }
     ],
     "alcohol": [
-      { "name": "CARLSBERG", "price": "120", "image": "/logo.png" },
-      { "name": "TUBORG", "price": "120", "image": "/logo.png" },
-      { "name": "PASQUA WINE (75CL)", "price": "800", "image": "/logo.png" },
-      { "name": "YENI RAKI (70CL)", "price": "1000", "image": "/yeni-rakı.jpg" },
-      { "name": "TEKIRDAG GOLD (70CL)", "price": "1400", "image": "/tekidağ-gold.jpg" },
-      { "name": "RED LABEL (75CL)", "price": "1200", "image": "/red-label.jpg" },
-      { "name": "BLACK LABEL (75CL)", "price": "1800", "image": "/black-label.jpg" },
-      { "name": "JAMESON (70CL)", "price": "1500", "image": "/jameson.jpg" },
-      { "name": "SARI ZEYBEK (70CL)", "price": "1500", "image": "/sarı-zeybek.jpg" },
-      { "name": "BEYLERBEYI GOBEK (70CL)", "price": "1500", "image": "/beyler-beyi-göbek.jpg" }
+      { "name": "CARLSBERG", "price": "120", "desc": "Danish pilsner beer, crisp and refreshing.", "image": "/logo.png" },
+      { "name": "TUBORG", "price": "120", "desc": "Danish premium lager beer.", "image": "/logo.png" },
+      { "name": "PASQUA WINE (75CL)", "price": "800", "desc": "Italian red wine, full-bodied and rich.", "image": "/logo.png" },
+      { "name": "YENI RAKI (70CL)", "price": "1000", "desc": "Traditional Turkish anise-flavored alcoholic drink.", "image": "/yeni-rakı.jpg" },
+      { "name": "TEKIRDAG GOLD (70CL)", "price": "1400", "desc": "Premium quality Turkish raki, aged to perfection.", "image": "/tekidağ-gold.jpg" },
+      { "name": "RED LABEL (75CL)", "price": "1200", "desc": "Johnnie Walker Red Label blended Scotch whisky.", "image": "/red-label.jpg" },
+      { "name": "BLACK LABEL (75CL)", "price": "1800", "desc": "Johnnie Walker Black Label blended Scotch whisky.", "image": "/black-label.jpg" },
+      { "name": "JAMESON (70CL)", "price": "1500", "desc": "Irish whiskey, triple-distilled for exceptional smoothness.", "image": "/jameson.jpg" },
+      { "name": "SARI ZEYBEK (70CL)", "price": "1500", "desc": "Turkish grape-based spirit with herbs.", "image": "/sarı-zeybek.jpg" },
+      { "name": "BEYLERBEYI GOBEK (70CL)", "price": "1500", "desc": "Premium Turkish raki, double-distilled for purity.", "image": "/beyler-beyi-göbek.jpg" }
     ]
   }
 }
